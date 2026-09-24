@@ -1,4 +1,4 @@
-# dotfiles
+# Omarchy Dotfiles
 
 Personal configuration for Arch Linux + Omarchy (Hyprland, Wayland), managed
 with [chezmoi](https://www.chezmoi.io/).
@@ -16,8 +16,6 @@ chezmoi apply -v
 
 Or in one shot: `chezmoi init --apply git@github.com:yaubara/omarchy-dotfiles.git`
 
-Daily updates: `chezmoi update -v`
-
 ## Package notes (not included in the repo)
 
 Installed via `scripts/install-userapps.sh` / setup scripts:
@@ -29,7 +27,7 @@ Installed via `scripts/install-userapps.sh` / setup scripts:
 | `codebook-lsp` | `pacman -S codebook-lsp` | LSP server for the codebook spell-checker |
 | Custom Scripts | `Scripts/` in this repo | misc system scripts: keyboard backlight RGB, layout colors, wallpaper toggle, etc. |
 
-## Voxtype (NVIDIA GPU) — IMPORTANT
+## Voxtype (NVIDIA GPU)
 
 The GPU-vs-CPU build of voxtype is NOT a config file. `sudo voxtype setup gpu --enable`
 repoints the `/usr/bin/voxtype` symlink to the Vulkan build. Reproduce it with:
@@ -48,7 +46,7 @@ Kernel command line lives in `/etc/default/limine` (template: `etc/default/limin
 in this repo). See that file for the NVIDIA/PCI-e custom flags; `root=PARTUUID=…`
 must be adjusted per machine.
 
-## fish
+## Fish shell
 
 `dot_config/fish/config.fish` — docker compose abbreviations, `unbind.fish` maps
 `ctrl-j` to `true`. After setup re-add paths (fish universal vars are machine state):
