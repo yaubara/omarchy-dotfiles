@@ -1,7 +1,7 @@
 # Omarchy Dotfiles
 
 Personal configuration for Arch Linux + Omarchy (Hyprland, Wayland), managed
-with [chezmoi](https://www.chezmoi.io/).
+with [chezmoi](https://www.chezmoi.io/). Also includes my neovim config.
 
 ## Setup on a fresh machine
 
