@@ -1,0 +1,4 @@
+# Version control the repository helper files, but never apply them to $HOME.
+README.md
+scripts
+etc

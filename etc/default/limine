@@ -1,0 +1,35 @@
+# Reference copy of /etc/default/limine (source for limine-entry-tool).
+#
+# This is NOT applied by chezmoi — it documents the persistent kernel cmdline
+# on the RTX 4050 hybrid-GPU machine. To reproduce on a new install, copy this
+# file to /etc/default/limine and adjust the root=PARTUUID=... to your disk.
+#
+# Custom bits (against Omarchy defaults):
+#   nvidia-drm.modeset=1                  # modeset NVIDIA driver early
+#   pcie_port_pm=off                      # fix PCIe power management issues
+#   initcall_blacklist=simpledrm_platform_driver_init  # hand over to nvidia
+#   zswap.enabled=0
+#   rootflags=subvol=@
+# The @@CMDLINE@@ placeholder is filled by /usr/share/omarchy/default/limine/default.conf.
+#
+# After editing: limine-update regenerates /boot/limine.conf on kernel updates.
+TARGET_OS_NAME="Omarchy"
+
+ESP_PATH="/boot"
+
+KERNEL_CMDLINE[default]+="quiet splash nvidia-drm.modeset=1 pcie_port_pm=off initcall_blacklist=simpledrm_platform_driver_init root=PARTUUID=efd6ce6c-bbcd-4ec6-8439-e0853fd78e35 zswap.enabled=0 rw rootfstype=btrfs rootflags=subvol=@ @@CMDLINE@@"
+
+ENABLE_UKI=yes
+CUSTOM_UKI_NAME="omarchy"
+
+ENABLE_LIMINE_FALLBACK=yes
+
+# Find and add other bootloaders
+FIND_BOOTLOADERS=yes
+
+
+MAX_SNAPSHOT_ENTRIES=5
+
+SNAPSHOT_FORMAT_CHOICE=5
+
+BOOT_ORDER="linux-omarchy, linux-omarchy-*, *, *fallback, Snapshots"
