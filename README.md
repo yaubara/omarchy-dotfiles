@@ -40,7 +40,7 @@ repoints the `/usr/bin/voxtype` symlink to the Vulkan build. Reproduce it with:
 (RTX 4050) with `VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/nvidia_icd.json`, so
 Whisper (large-v3-turbo) loads on the NVIDIA GPU instead of the Intel iGPU.
 
-## Limine boot cmdline
+## Limine
 
 Kernel command line lives in `/etc/default/limine` (template: `etc/default/limine`
 in this repo). See that file for the NVIDIA/PCI-e custom flags; `root=PARTUUID=…`
