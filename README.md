@@ -10,11 +10,11 @@ with [chezmoi](https://www.chezmoi.io/).
 sudo pacman -S chezmoi
 
 # 2. Apply dotfiles (interactive: shows diff, asks to confirm)
-chezmoi init git@github.com:yaubara/dotfiles.git
+chezmoi init git@github.com:yaubara/omarchy-dotfiles.git
 chezmoi apply -v
 ```
 
-Or in one shot: `chezmoi init --apply git@github.com:yaubara/dotfiles.git`
+Or in one shot: `chezmoi init --apply git@github.com:yaubara/omarchy-dotfiles.git`
 
 Daily updates: `chezmoi update -v`
 
@@ -27,15 +27,7 @@ Installed via `scripts/install-userapps.sh` / setup scripts:
 | Cursor theme `Bibata-Modern-Ice` | `yay -S bibata-cursor-theme-bin` | set via `hypr/envs.lua` (`XCURSOR_THEME`) |
 | `JetBrainsMono Nerd Font` | `pacman -S ttf-jetbrains-mono-nerd-basic` | used by foot |
 | `codebook-lsp` | `pacman -S codebook-lsp` | LSP server for the codebook spell-checker |
-| Keyboard RGB scripts | separate repo [yaubara/arch-scripts](https://github.com/yaubara/arch-scripts) | copies also live in `Scripts/` |
-
-Other runtime state that is deliberately NOT tracked:
-
-- `~/.local/share/voxtype/models/*.bin` — downloaded Whisper models (~1.6 GB), re-fetched by `scripts/setup-voxtype.sh`
-- `~/.local/share/nvim/mason/` — LSP server binaries, auto-installed by LazyVim
-- `~/.local/share/opencode/` — opencode session db / logs / tool output
-- `~/.config/obsidian/Preferences` — electron devtools state
-- Obsidian vaults (incl. `.obsidian/hotkeys.json` — the 32 custom hotkeys) live in their own repo.
+| Custom Scripts | `Scripts/` in this repo | misc system scripts: keyboard backlight RGB, layout colors, wallpaper toggle, etc. |
 
 ## Voxtype (NVIDIA GPU) — IMPORTANT
 
