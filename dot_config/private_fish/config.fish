@@ -1,3 +1,6 @@
+# Keep local tool dirs on PATH (idempotent when applied to a fresh machine)
+fish_add_path ~/Scripts ~/.local/bin
+
 if status is-interactive
     # Docker Compose abbreviations
     abbr -a dc 'docker compose'

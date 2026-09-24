@@ -46,11 +46,4 @@ Kernel command line lives in `/etc/default/limine` (template: `etc/default/limin
 in this repo). See that file for the NVIDIA/PCI-e custom flags; `root=PARTUUID=…`
 must be adjusted per machine.
 
-## Fish shell
 
-`dot_config/fish/config.fish` — docker compose abbreviations, `unbind.fish` maps
-`ctrl-j` to `true`. After setup re-add paths (fish universal vars are machine state):
-
-```sh
-fish_add_path ~/Scripts ~/.local/bin
-```
