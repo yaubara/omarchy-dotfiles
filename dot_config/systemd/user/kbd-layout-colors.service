@@ -3,7 +3,7 @@ Description=Keyboard layout RGB follower
 
 [Service]
 Type=simple
-ExecStart=%h/.local/bin/kbd-layout-colors-daemon.sh
+ExecStart=%h/Scripts/kbd_layout_colors.sh daemon
 Restart=on-failure
 RestartSec=3
 

@@ -27,6 +27,26 @@ Installed via `scripts/install-userapps.sh` / setup scripts:
 | `codebook-lsp` | `pacman -S codebook-lsp` | LSP server for the codebook spell-checker |
 | Custom Scripts | `Scripts/` in this repo | misc system scripts: keyboard backlight RGB, layout colors, wallpaper toggle, etc. |
 
+## Fans & keyboard backlight (Gigabyte G5 MF, Clevo-based)
+
+Hardware control stack (packages, not dotfiles — reinstall on a fresh machine):
+
+| What | How | Why |
+|---|---|---|
+| `clevo-drivers-dkms-git` (AUR) | `omarchy pkg aur add clevo-drivers-dkms-git` | kernel modules (`clevo_acpi`, `tuxedo_io`, `tuxedo_keyboard`); with `force_unsupported=1` on non-Tuxedo Clevo |
+| `tuxedo-control-center-bin` (AUR) | `omarchy pkg aur add tuxedo-control-center-bin`, then `sudo systemctl enable --now tccd.service tccd-sleep.service` | fan curves/profiles GUI + daemon. The service is `tccd`, not `tuxedofancontrol` |
+
+Follow Mode (keyboard color follows layout, EN=blue / RU=red): `Scripts/kbd_layout_colors.sh`
+(`toggle|sync|status|daemon`) + user service `dot_config/systemd/user/kbd-layout-colors.service`,
+toggled from the top-bar widget (`yaubara.keyboard-layout`, right-click). Brightness Fn-keys
+are bound in `hypr/bindings.lua` to `Scripts/kbd_backlight.sh` — TCC adds no Hyprland bindings.
+
+Notes: TCC applies its own stored backlight state on start/profile switch
+(`keyboardBacklightControlEnabled` in `/etc/tcc/settings`), which overrides the Follow Mode
+color until the next layout switch. Do NOT install `clevo-xsm-wmi` (abandoned, conflicts)
+or `clevo-indicator` (outdated, unsafe direct EC access); `gigabyte-laptop-wmi` does not
+support pre-2025 Gaming models (G5/G7 are rebadged Clevo).
+
 ## Voxtype (NVIDIA GPU)
 
 The GPU-vs-CPU build of voxtype is NOT a config file. `sudo voxtype setup gpu --enable`
