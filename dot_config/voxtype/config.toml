@@ -103,5 +103,16 @@ on_transcription = false
 # Enable spoken punctuation conversion (e.g., say "period" to get ".")
 spoken_punctuation = true
 
+[text.replacements]
+amarchy = "Omarchy"
+marchi = "Omarchy"
+marchy = "Omarchy"
+"марчи" = "Omarchy"
+"амарче" = "Omarchy"
+"марча" = "Omarchy"
+"марч" = "Omarchy"
+"марче" = "Omarchy"
+"марчин" = "Omarchy"
+
 # Custom word replacements (case-insensitive)
 # replacements = { "hyperwhisper" = "hyprwhspr" }
