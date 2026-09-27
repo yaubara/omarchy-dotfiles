@@ -16,6 +16,9 @@
           "id": "omarchy.system-update"
         },
         {
+          "id": "yaubara.keyboard-layout"
+        },
+        {
           "id": "omarchy.weather"
         }
       ],
@@ -33,9 +36,6 @@
         },
         {
           "id": "omarchy.agents"
-        },
-        {
-          "id": "yaubara.keyboard-layout"
         },
         {
           "id": "omarchy.bluetooth"

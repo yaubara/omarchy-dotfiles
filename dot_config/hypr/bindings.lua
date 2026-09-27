@@ -62,8 +62,23 @@ hl.unbind("SUPER + SLASH")
 o.bind("SUPER + SLASH", "Keybindings", "omarchy-menu-keybindings")
 
 -- Monitor scaling: SUPER+ / SUPER-
-hl.unbind("SUPER + ALT + SLASH")
-o.bind("SUPER + PLUS", "Monitor scaling up", "omarchy-hyprland-monitor-scaling up")
+hl.unbind("SUPER + ALT + SLASH") -- was: stock Monitor scaling down
+
+hl.unbind("SUPER + code:20") -- was: Expand window left (same physical key as MINUS)
+hl.unbind("SUPER + ALT + code:20") -- was: Expand window left a little
+hl.unbind("SUPER + CTRL + code:20") -- was: Expand window left a lot
+hl.unbind("SUPER + SHIFT + ALT + code:20") -- was: Shrink window up a little
+hl.unbind("SUPER + CTRL + SHIFT + code:20") -- was: Shrink window up a lot
+hl.unbind("SUPER + SHIFT + code:20") -- was: Shrink window up
+
+hl.unbind("SUPER + code:21") -- was: Shrink window left (same physical key as EQUAL)
+hl.unbind("SUPER + SHIFT + ALT + code:21") -- was: Expand window down a little
+hl.unbind("SUPER + CTRL + SHIFT + code:21") -- was: Expand window down a lot
+hl.unbind("SUPER + ALT + code:21") -- was: Shrink window left a little
+hl.unbind("SUPER + CTRL + code:21") -- was: Shrink window left a lot
+hl.unbind("SUPER + SHIFT + code:21") -- was: Expand window down
+
+o.bind("SUPER + EQUAL", "Monitor scaling up", "omarchy-hyprland-monitor-scaling up")
 o.bind("SUPER + MINUS", "Monitor scaling down", "omarchy-hyprland-monitor-scaling down")
 
 -- Vim-letter window navigation
